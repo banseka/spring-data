@@ -1,0 +1,45 @@
+server:
+  port: 8001
+
+
+spring:
+  profiles:
+    active: dev
+
+---
+spring:
+  profiles: dev
+  datasource:
+    className: com.mysql.jdbc.Driver
+    password: 76349851jude$$
+    url: jdbc:mysql://localhost:3306/schooldb
+    username: root
+  jpa:
+    hibernate:
+      ddl-auto: update
+    show-sql: true
+welcom:
+  message: welcome to my app
+#management:
+#  endpoints:
+#    web:
+#      exposure:
+#        include: "*"
+#        exclude: "env,beans"
+
+
+
+---
+spring:
+  profiles: prod
+  datasource:
+    className: com.mysql.jdbc.Driver
+    password: 76349851Jude$$
+    url: jdbc:mysql://localhost:3306/schooldb-prod
+    username: root
+  jpa:
+    hibernate:
+      ddl-auto: update
+    show-sql: true
+welcom:
+  message: welcome to my app
